@@ -44,3 +44,26 @@
         $i++;
     }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops </title>
+</head>
+<body>
+  <h1 style="text-align:center;">From HTML </h1>
+  <br>
+  <br>
+  <h2>Movies</h2>
+  <ul>
+      <?php foreach($movies as $movie){ ?>
+        <h4><?php echo $movie['movie']; ?> </h4>
+        <p><?php echo $movie['actor']; ?> </p>
+        <?php } ?>
+  </ul>
+
+</body>
+</html>
