@@ -9,13 +9,7 @@
     //require 'players.php';
     //echo 'end of php';
 
-    // connecting to MySQL Databse
-    $conn = mysqli_connect('localhost', 'unknown','bangladesh#71','cricketers_db');
-
-    //check connection
-    if(!$conn){
-        echo 'Connection error: '.mysqli_connect_error();
-    }
+    include('config/db_connect.php');
 
     // write query for all players
     $sql = 'SELECT name, country, role, batting_style, bowling_style FROM players_information ORDER BY created';
@@ -53,7 +47,7 @@
                 <div class="col s6 md3">
                     <div class="card z-depth-0">
                        <div class="card-content justify">
-                           <h6><?php echo htmlspecialchars($player['name']); ?> </h6>
+                           <h5><?php echo htmlspecialchars($player['name']); ?> </h5>
                            <p>Country: <?php echo htmlspecialchars($player['country']); ?> </p>
                            <p>Role: <?php echo htmlspecialchars($player['role']); ?> </p>
                            <p>Batting Style: <?php echo htmlspecialchars($player['batting_style']); ?> </p>
